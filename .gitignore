@@ -2,3 +2,6 @@
 /.git
 /..gitignore.kate.swp
 /.idea
+/core/.coverage
+/core/..db.sqlite3
+/core/htmlcov/
