@@ -3,10 +3,11 @@ from django.http import HttpResponse
 from .models import Category, Product
 
 # Create your views here.
-def index(request):
+def all_costumers(request):
+    products = Product.objects.all()
     print(request)
     print('Hello')
-    return HttpResponse('Landing')
+    return render(request, 'showcase/home.html', {'costumers': products})
 
 def test(request):
     return HttpResponse('fuck')
