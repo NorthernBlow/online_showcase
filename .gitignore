@@ -5,3 +5,4 @@
 /core/.coverage
 /core/..db.sqlite3
 /core/htmlcov/
+/core/db.sqlite3
