@@ -8,3 +8,4 @@
 /core/db.sqlite3
 /core/showcase/migrations
 /core/showcase/__pycache__
+/core/core/__pycache__
