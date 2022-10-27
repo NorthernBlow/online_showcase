@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from datetime import datetime
 
 
+
 ## категории товаров
 class Category(models.Model):
     name = models.CharField(max_length=255, db_index=True)
@@ -21,12 +22,16 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
+
+## продавцы
 class Vendor(models.Model):
-    vendor_name = models.CharField(max_length=255)
+    vendor_name = models.CharField(max_length=255, db_index=True)
+    slug = models.SlugField(max_length=255, unique=True)
     description = models.TextField(max_length=1000, default='', blank='false')
     vendor_email = models.EmailField()
     password = models.CharField(max_length=100)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, default=1)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, default=None)
     image = models.ImageField(upload_to='content/vendor_images/')
 
 
@@ -89,7 +94,8 @@ class Product(models.Model):
 
 ##покупатели
 class Customer(models.Model):
-    nickname = models.CharField(max_length=50)
+    nickname = models.CharField(max_length=50, db_index=True)
+    slug = models.SlugField(max_length=50, unique=True)
     password = models.CharField(max_length=100)
 
     def register(self):
@@ -104,11 +110,9 @@ class Customer(models.Model):
 
 
     def isExists(self):
-        if Customer.objects.filter(email=self.email):
+        if Customer.objects.filter(nickname=self.nickname):
             return True
         return False
-
-## продавцы
 
 
 

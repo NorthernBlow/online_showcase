@@ -6,3 +6,4 @@
 /core/..db.sqlite3
 /core/htmlcov/
 /core/db.sqlite3
+/core/showcase/migrations
