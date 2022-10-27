@@ -7,3 +7,4 @@
 /core/htmlcov/
 /core/db.sqlite3
 /core/showcase/migrations
+/core/showcase/__pycache__
