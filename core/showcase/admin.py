@@ -12,6 +12,7 @@ class CategoryAdmin(admin.ModelAdmin):
 class ProductAdmin(admin.ModelAdmin):
     list_display = ['title', 'author', 'slug', 'price', 'in_stock', 'created_at', 'updated_at']
     list_filter = ['in_stock', 'is_active']
+    search_fields = ('title', 'price', 'author')
     list_editable = ['price', 'in_stock']
     prepopulated_fields = {'slug': ('title',)}
 
@@ -20,6 +21,7 @@ class ProductAdmin(admin.ModelAdmin):
 class VendorAdmin(admin.ModelAdmin):
     list_display = ['vendor_name', 'image']
     list_filter = ['category']
+    search_fields = ('vendor_name', 'title')
     prepopulated_fields = {'slug': ('vendor_name',)}
 
 
@@ -27,6 +29,7 @@ class VendorAdmin(admin.ModelAdmin):
 class CustomerAdmin(admin.ModelAdmin):
     list_display = ['nickname', 'slug']
     list_filter = ['nickname']
+    search_fields = ['nickname']
     prepopulated_fields = {'slug': ('nickname',)}
 
 
