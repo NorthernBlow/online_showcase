@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.http import HttpResponse
 from .models import Category, Product, Vendor
 
-# Create your views here.
+
 def all_vendors(request):
     Vendors = Vendor.objects.all()
     print(request)
