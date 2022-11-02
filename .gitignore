@@ -9,3 +9,5 @@
 /core/showcase/migrations
 /core/showcase/__pycache__
 /core/core/__pycache__
+core/core/static/
+/core/staticfiles/

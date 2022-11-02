@@ -137,7 +137,7 @@ class Customer(models.Model):
 
 ## заказанные товары
 class Order(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
+    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, related_name="Товар")
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True)
     vendor = models.ForeignKey(Vendor, on_delete=models.SET_NULL, null=True)
     quantity = models.IntegerField(default=1)
