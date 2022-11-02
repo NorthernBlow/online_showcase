@@ -11,6 +11,8 @@ class Category(models.Model):
     photo = models.ImageField(upload_to='content/images/%Y%m%d/', blank=True)
     is_published = models.BooleanField(default=True)
 
+
+## objects - менеджер, который занимается обработкой данных в модели. в данном случае забираем из нее все поля.
     @staticmethod
     def get_all_categories():
         return Category.objects.all()
@@ -36,7 +38,7 @@ class Vendor(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default=None, blank=True)
     image = models.ImageField(upload_to='content/vendor_images/%Y%m%d/')
 
-
+## называем по-человечески модель.
     class Meta:
         verbose_name_plural = 'Магазины'
         verbose_name = 'Магазин'

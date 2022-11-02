@@ -1,0 +1,12 @@
+
+{% load static %}
+
+{% block content %}
+<ul>
+{% for var1 in object_list %}
+    <li>{{ var1.title }} - {{ var1.title }} </li>
+  {{ var1.title }}
+        {% endfor %}
+</ul>
+hello page1
+{% endblock %}
