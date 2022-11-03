@@ -16,5 +16,15 @@ class VendorsViews(ListView):
         return context
 
 
+class CategoryViews(ListView):
+    model = Category
+
+
+
 class ProductViews(ListView):
     model = Product
+    context_object_name = "product"
+
+    def head(self, *args, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context

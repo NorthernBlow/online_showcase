@@ -35,8 +35,8 @@ class Vendor(models.Model):
     description = models.TextField(max_length=1000, default='', blank='false')
     vendor_email = models.EmailField()
     password = models.CharField(max_length=100)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, default=None, blank=True)
-    image = models.ImageField(upload_to='content/vendor_images/%Y%m%d/')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
+    image = models.ImageField(upload_to='content/vendor_images/%Y%m%d/', blank=True)
 
 ## называем по-человечески модель.
     class Meta:
@@ -143,7 +143,7 @@ class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True)
     vendor = models.ForeignKey(Vendor, on_delete=models.SET_NULL, null=True)
     quantity = models.IntegerField(default=1)
-    price = models.ForeignKey(Product, on_delete=models.CASCADE, blank=False)
+    price = models.DecimalField(blank=True, decimal_places=2, max_digits=100)
     address = models.CharField(max_length=50, default='', blank=True)
     date = models.DateField(auto_now_add=True)
     status = models.BooleanField(default=False)
