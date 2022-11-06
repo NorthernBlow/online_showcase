@@ -16,9 +16,6 @@ class VendorsViews(ListView):
         return context
 
 
-class CategoryViews(ListView):
-    model = Category
-
 
 
 class ProductViews(ListView):
@@ -28,3 +25,10 @@ class ProductViews(ListView):
     def head(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
+
+
+
+
+def all_products(request):
+    products = Product.objects.all()
+    return render(request, 'store/home.html', {'products': products})

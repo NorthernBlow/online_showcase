@@ -1,7 +1,7 @@
 
 {% load static %}
 {% block sidebar %}
-{% include "./navbar.html" %}
+{% include "./base.html" %}
 {% endblock %}
 {% block content %}
 <div class="container px-4 py-5" id="featured-3">
@@ -9,7 +9,7 @@
 
 {% for var1 in object_list %}
 <div class="col">
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 14rem;">
         <div class="card-body">
             <h5 class="card-title">{{ var1.title }}</h5>
             <p class="card-text">{{ var1.description }}</p>
