@@ -9,7 +9,8 @@
 /core/showcase/migrations
 /core/showcase/__pycache__
 /core/core/__pycache__
-core/core/static/
+core/core/static/css
+core/core/static/js
 /core/staticfiles/
 /core/media/content/vendor_images/20221102/
 /core/media/content/
