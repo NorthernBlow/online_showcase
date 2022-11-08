@@ -1,0 +1,12 @@
+
+dropdown-item:hover {
+background-color: white;
+}
+
+.dropdown-item.active {
+background-color: white;
+}
+
+.dropdown-menu {
+background-color: white
+}
