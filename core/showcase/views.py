@@ -32,9 +32,9 @@ def index(request):
 
 #def all_products(request):
 #    products = Product.objects.all()
-#   return render(request, 'store/home.html', {'products': products})
+#   return render(request, 'showcase/home.html', {'products': products})
 
 
 #def all_categories(request):
 #    categories = Category.objects.all()
-#    return render(request, 'store/home.html', {"categories": categories})
+#    return render(request, 'showcase/home.html', {"categories": categories})
