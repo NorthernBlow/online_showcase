@@ -35,6 +35,5 @@ def index(request):
 #   return render(request, 'showcase/home.html', {'products': products})
 
 
-#def all_categories(request):
-#    categories = Category.objects.all()
-#    return render(request, 'showcase/home.html', {"categories": categories})
+def categories(request):
+   return  {"categories": Category.objects.all()}

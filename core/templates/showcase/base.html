@@ -13,25 +13,27 @@
 </head>
 <body>
 <div class="collapse" id="navbarToggleExternalContent">
+
   <div class="bg-dark p-4">
 
-    <h5 class="text-white h4">Свернутый контент</h5>
-    <span class="text-muted">Переключаемый через бренд навигационной панели.</span>
+    <h5 class="text-white h4">Категории</h5>
+      <h5 class="text-white h4">Категории</h5>
+    <span class="text-muted">Здесь представлены категории.</span>
+
       <ul>
-            <li><a class="text-light" href="#">Действие</a></li>
-            <li><a class="text-light" href="#">Другое действие</a></li>
-            <li><a class="text-light" href="#">Что-то еще здесь</a></li>
-           </ul>
+          {% for why in categories %}
+            <li><a class="text-light" href="#">{{ why.name }}</a></li>
+          {% endfor %}
+      </ul>
+
   </div>
+
 </div>
 <nav class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" id="dropdownMenu2" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false">
       <span class="navbar-toggler-icon"></span>
     </button>
-      <!-- это надо починить отсюда -->
-
-      <!-- вот по сюда -->
       <form class="d-flex">
          <input class="form-control me-2" type="search" placeholder="|" aria-label="Search">
              <button class="btn btn-outline-success" type="submit">Поиск</button>
