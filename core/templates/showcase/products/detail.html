@@ -1,0 +1,39 @@
+{% extends "../base.html" %}
+{% load static %}
+
+{{ product.title }}
+{% endblock %
+{% block content %}
+<div class=container">
+    <main class="pt-5">
+        <div class="row g-3 bg-light">
+            <div class="col-md-5 col-lg-5 order-md-first bg-light">
+                {% if product.image %}
+                <img class="img-fluid mx-auto d-block" width="200px" alt="Responsive image" src="{{ product.image.url }}">
+                {% else %}
+                <img class="img-fluid mx-auto d-block" width="200px" alt="Responsive image" src="#">
+                {% endif %}
+            </div>
+            <div class="col-md-7 col-lg-7 ps-md-3 ps-lg-5">
+                 <h1 class="mb-0 h4">{{ product.title }}</h1>
+                 <p><span class="lead">{{ product.author }}</span> - магазин </p>
+                 <p>{{ product.description|slice:":355" }}...</p>
+                <div class="border">
+                    <div class="col border-bottom">
+                        <div class="row p-3">
+                            <div class="col-6">Цена</div>
+                            <div class="col-6 text-end"><span class="h4 fw-bold">₽{{ product.price }}</span></div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row p-3">
+
+                            <div class="col-6 text-end"><button type="button" class="btn btn-secondary btn-sm">Купить</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

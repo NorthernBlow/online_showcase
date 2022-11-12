@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, HttpResponseRedirect
+from django.shortcuts import render, redirect, HttpResponseRedirect, get_object_or_404
 from django.http import HttpResponse
 from django.utils import timezone
 from django.views.generic import ListView
@@ -30,10 +30,14 @@ class ProductViews(ListView):
 def index(request):
     return render(request, 'showcase/home.html')
 
-#def all_products(request):
-#    products = Product.objects.all()
-#   return render(request, 'showcase/home.html', {'products': products})
+def product_detail(request, slug):
+    product = get_object_or_404(Product, slug=slug, in_stock=True)
+    return render(request, 'showcase/products/detail.html', {'product': product})
 
 
 def categories(request):
-   return  {"categories": Category.objects.all()}
+    return {"categories": Category.objects.all()}
+
+
+def vendors_products():
+    return {"detail": Product.objects.all()}

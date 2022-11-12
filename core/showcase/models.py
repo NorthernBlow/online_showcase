@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
-
+from django.urls import reverse
 
 
 ## категории товаров
@@ -79,6 +79,10 @@ class Product(models.Model):
     is_active = models.BooleanField(default=True, verbose_name='Опубликовано')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+
+    def get_absolute_url(self):
+        return reverse('showcase:product_detail', args=[self.slug])
 
 
     @staticmethod
