@@ -26,6 +26,10 @@ class Category(models.Model):
         return self.name
 
 
+    def get_absolute_url(self):
+        return reverse('showcase:category_list', args=[self.slug])
+
+
 
 ## продавцы
 class Vendor(models.Model):
@@ -42,6 +46,11 @@ class Vendor(models.Model):
     class Meta:
         verbose_name_plural = 'Магазины'
         verbose_name = 'Магазин'
+
+
+    def get_absolute_url(self):
+        return reverse('showcase:category_list', args=[self.slug])
+
 
     def register(self):
         self.save()
